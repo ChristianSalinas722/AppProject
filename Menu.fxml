@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.paint.Color?>
+<?import javafx.scene.paint.LinearGradient?>
+<?import javafx.scene.paint.Stop?>
+<?import javafx.scene.text.Font?>
+
+<GridPane alignment="center" hgap="10" prefHeight="304.0" prefWidth="485.0" vgap="10" xmlns="http://javafx.com/javafx/15.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.MainScreenController">
+    <columnConstraints>
+        <ColumnConstraints />
+    </columnConstraints>
+    <rowConstraints>
+        <RowConstraints />
+    </rowConstraints>
+    <children>
+        <AnchorPane prefHeight="305.0" prefWidth="484.0">
+            <children>
+                <ImageView fitHeight="323.0" fitWidth="522.0" layoutX="-2.0" pickOnBounds="true" preserveRatio="true">
+                    <image>
+                        <Image url="@Binary.png" />
+                    </image></ImageView>
+                <Label layoutX="14.0" layoutY="252.0" prefHeight="71.0" prefWidth="265.0" text="SaveYourGrade" textAlignment="CENTER">
+                    <font>
+                        <Font name="Bookman Old Style Italic" size="33.0" />
+                    </font>
+                    <textFill>
+                        <LinearGradient endX="1.0" endY="1.0" startX="0.3015872955322266" startY="0.3333333333333333">
+                            <stops>
+                                <Stop>
+                                    <color>
+                                        <Color red="0.160954087972641" green="0.6359649300575256" blue="0.6201311945915222" />
+                                    </color>
+                                </Stop>
+                                <Stop offset="1.0">
+                                    <color>
+                                        <Color green="1.0" blue="0.3499999940395355" />
+                                    </color>
+                                </Stop>
+                            </stops>
+                        </LinearGradient>
+                    </textFill>
+                </Label>
+                <Button layoutX="122.0" layoutY="98.0" mnemonicParsing="false" prefHeight="41.0" prefWidth="95.0" text="Add Grades">
+                    <font>
+                        <Font name="Bookman Old Style" size="12.0" />
+                    </font>
+                    <textFill>
+                        <LinearGradient endX="1.0" endY="1.0" startX="0.495238108862014">
+                            <stops>
+                                <Stop>
+                                    <color>
+                                        <Color red="0.09113060683012009" green="0.6710526347160339" blue="0.622725784778595" />
+                                    </color>
+                                </Stop>
+                                <Stop offset="1.0">
+                                    <color>
+                                        <Color red="0.1919310837984085" green="0.7938596606254578" blue="0.13721030950546265" />
+                                    </color>
+                                </Stop>
+                            </stops>
+                        </LinearGradient>
+                    </textFill></Button>
+                <Button layoutX="279.0" layoutY="98.0" mnemonicParsing="false" prefHeight="41.0" prefWidth="95.0" text="View Grade">
+                    <textFill>
+                        <LinearGradient endX="1.0" endY="1.0" startX="0.4698413076854887" startY="0.37142857142857144">
+                            <stops>
+                                <Stop>
+                                    <color>
+                                        <Color red="0.09113060683012009" green="0.6710526347160339" blue="0.622725784778595" />
+                                    </color>
+                                </Stop>
+                                <Stop offset="1.0">
+                                    <color>
+                                        <Color red="0.1919310837984085" green="0.7938596606254578" blue="0.13721030950546265" />
+                                    </color>
+                                </Stop>
+                            </stops>
+                        </LinearGradient>
+                    </textFill></Button>
+            </children>
+        </AnchorPane>
+    </children>
+</GridPane>

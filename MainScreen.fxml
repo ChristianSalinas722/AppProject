@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.paint.Color?>
+<?import javafx.scene.paint.LinearGradient?>
+<?import javafx.scene.paint.Stop?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/15.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.MenuController">
+    <children>
+        <ImageView fitHeight="413.0" fitWidth="642.0" layoutX="-6.0" pickOnBounds="true" preserveRatio="true">
+            <image>
+                <Image url="@MainTitle.jpg" />
+            </image>
+        </ImageView>
+        <Label layoutX="134.0" layoutY="85.0" prefHeight="126.0" prefWidth="367.0" text="SaveYourGrade">
+            <font>
+                <Font name="Bookman Old Style Italic" size="46.0" />
+            </font>
+            <textFill>
+                <LinearGradient endX="0.6253968375069755" endY="0.5047619047619047">
+                    <stops>
+                        <Stop>
+                            <color>
+                                <Color green="1.0" blue="0.9833333492279053" />
+                            </color>
+                        </Stop>
+                        <Stop offset="1.0">
+                            <color>
+                                <Color red="0.0833333358168602" green="1.0" />
+                            </color>
+                        </Stop>
+                    </stops>
+                </LinearGradient>
+            </textFill>
+        </Label>
+        <Button layoutX="236.0" layoutY="201.0" mnemonicParsing="false" prefHeight="60.0" prefWidth="163.0" text="Start Now" textAlignment="CENTER">
+            <font>
+                <Font name="Bookman Old Style Italic" size="26.0" />
+            </font>
+            <textFill>
+                <LinearGradient endX="0.5269841512044271" endY="0.9523809523809523" startX="0.22539677846999412" startY="0.6031745910644531">
+                    <stops>
+                        <Stop>
+                            <color>
+                                <Color red="0.053728070110082626" green="0.8289473652839661" blue="0.816027045249939" />
+                            </color>
+                        </Stop>
+                        <Stop offset="1.0">
+                            <color>
+                                <Color red="0.0833333358168602" green="1.0" />
+                            </color>
+                        </Stop>
+                    </stops>
+                </LinearGradient>
+            </textFill>
+        </Button>
+    </children>
+</AnchorPane>
