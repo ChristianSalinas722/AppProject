@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.text.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<AnchorPane minHeight="330.0" minWidth="520.0" prefHeight="330.0" prefWidth="520.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1">
+   <children>
+      <ImageView fitHeight="330.0" fitWidth="582.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../../../Downloads/abstract-binary-code-background-digital-data-vector-21415289.jpg" />
+         </image>
+      </ImageView>
+      <Pane layoutX="46.0" layoutY="29.0" prefHeight="285.0" prefWidth="200.0">
+         <children>
+            <TextArea layoutY="-1.0" prefHeight="276.0" prefWidth="142.0" text="Assignment 0&#10;&#10;Lab 1&#10;&#10;Lab 2&#10;&#10;Assignment 1&#10;&#10;Exam 1&#10;&#10;Quiz 1&#10;&#10;Quiz 2&#10;&#10;Lab 3" />
+            <TextArea layoutX="139.0" layoutY="-1.0" prefHeight="276.0" prefWidth="47.0" text="99&#10;&#10;100&#10;&#10;97&#10;&#10;85&#10;&#10;62&#10;&#10;92&#10;&#10;83&#10;&#10;79" />
+         </children>
+      </Pane>
+      <Label layoutX="246.0" layoutY="89.0" text="Chemistry" textFill="#00ff2f">
+         <font>
+            <Font name="Bookman Old Style" size="49.0" />
+         </font>
+      </Label>
+      <Label layoutX="287.0" layoutY="136.0" text="Average: 87" textFill="#00ff2f">
+         <font>
+            <Font name="Bookman Old Style" size="29.0" />
+         </font>
+      </Label>
+   </children>
+</AnchorPane>
