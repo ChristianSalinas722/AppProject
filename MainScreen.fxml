@@ -10,7 +10,7 @@
 <?import javafx.scene.paint.Stop?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/15.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.MenuController">
+<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/15.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.MainScreenController">
     <children>
         <ImageView fitHeight="413.0" fitWidth="642.0" layoutX="-6.0" pickOnBounds="true" preserveRatio="true">
             <image>
@@ -38,7 +38,7 @@
                 </LinearGradient>
             </textFill>
         </Label>
-        <Button layoutX="236.0" layoutY="201.0" mnemonicParsing="false" prefHeight="60.0" prefWidth="163.0" text="Start Now" textAlignment="CENTER">
+        <Button fx:id="MenuButton" layoutX="236.0" layoutY="201.0" mnemonicParsing="false" onAction="#changeSceneButtonHOme" prefHeight="60.0" prefWidth="163.0" text="Start Now" textAlignment="CENTER">
             <font>
                 <Font name="Bookman Old Style Italic" size="26.0" />
             </font>
