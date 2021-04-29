@@ -1,5 +1,12 @@
+
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import java.lang.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.paint.*?>
+<?import javafx.scene.text.*?>
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.image.Image?>
@@ -10,7 +17,7 @@
 <?import javafx.scene.paint.Stop?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/15.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.MainScreenController">
+<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.MainScreenController">
     <children>
         <ImageView fitHeight="413.0" fitWidth="642.0" layoutX="-6.0" pickOnBounds="true" preserveRatio="true">
             <image>
@@ -26,12 +33,12 @@
                     <stops>
                         <Stop>
                             <color>
-                                <Color green="1.0" blue="0.9833333492279053" />
+                                <Color blue="0.9833333492279053" green="1.0" />
                             </color>
                         </Stop>
                         <Stop offset="1.0">
                             <color>
-                                <Color red="0.0833333358168602" green="1.0" />
+                                <Color green="1.0" red="0.0833333358168602" />
                             </color>
                         </Stop>
                     </stops>
@@ -47,12 +54,12 @@
                     <stops>
                         <Stop>
                             <color>
-                                <Color red="0.053728070110082626" green="0.8289473652839661" blue="0.816027045249939" />
+                                <Color blue="0.816027045249939" green="0.8289473652839661" red="0.053728070110082626" />
                             </color>
                         </Stop>
                         <Stop offset="1.0">
                             <color>
-                                <Color red="0.0833333358168602" green="1.0" />
+                                <Color green="1.0" red="0.0833333358168602" />
                             </color>
                         </Stop>
                     </stops>
