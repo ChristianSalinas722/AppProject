@@ -1,4 +1,5 @@
-package sample;
+package application;
+
 
 import java.io.BufferedReader;
 import java.io.File;
@@ -20,7 +21,7 @@ import javafx.scene.control.TextField;
 import javafx.scene.text.Text;
 import javafx.scene.text.TextFlow;
 
-public class ViewGradeController {
+public class ViewGradesController {
 
     @FXML
     private Text average;
@@ -73,7 +74,7 @@ public class ViewGradeController {
         String currentLine = "";
         String assign = "";
         String grad = "";
-        int lineNum = 0;
+        int lineNum = -1;
         int result = 0;
 
         String patern = "(.*)([1-9]{2}$)";
@@ -94,17 +95,18 @@ public class ViewGradeController {
             if(m.find()){
                 assign = m.group(1);
                 grad = m.group(2);
-            }
+            
             total += Double.parseDouble(grad);
-            System.out.println(assign);
-            System.out.println(grad);
-
+            //System.out.println(assign);
+           // System.out.println(grad);
+            }
 
             lineNum++;
             if(total != 0) {
                 result = 1;
             }
         }
+        
 
         System.out.println("Line Number total: " + lineNum);
         if(result == 1) {
@@ -137,18 +139,15 @@ public class ViewGradeController {
 			pw.write("\n");
 			pw.write(String.format(formatStr, assignment, grade));
 			pw.flush();
-
 		}
 		else if(assignment.length() >= 12 && assignment.length() < 20) {
 			pw.write("\n");
 			pw.write(String.format(formatStr, assignment, grade));
 			pw.flush();
-
 		}
 		else if(assignment.length() >= 20 && assignment.length() < 28) {
 			pw.append("\n" + assignment + "\t" + grade);
 			pw.flush();
-
 		}*/
         gradeList.getChildren().clear();
         assignList.getChildren().clear();
