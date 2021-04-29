@@ -1,4 +1,4 @@
-package sample;
+package application;
 
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
@@ -15,8 +15,8 @@ public class MenuController {
     @FXML
     private Button AddGradeButton;
     private Button ViewGradeButton;
-    public void changeSceneButtonHOme(ActionEvent event) throws IOException {
-        Parent MenuScreen = FXMLLoader.load(getClass().getResource("ViewGrade.fxml"));
+    public void changeSceneButtonHome(ActionEvent event) throws IOException {
+        Parent MenuScreen = FXMLLoader.load(getClass().getResource("ViewGrades.fxml"));
         Scene Homescene = new Scene(MenuScreen);
 
         Stage window = (Stage)((Node)event.getSource()).getScene().getWindow();
