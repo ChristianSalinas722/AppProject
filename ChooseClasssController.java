@@ -70,7 +70,7 @@ public void DeleteClassToList() {
         });
 
             try(PrintWriter out = new PrintWriter(new BufferedWriter(new FileWriter(create,true)))){
-                out.println();
+                out.println("\n");
             } catch(IOException ioe){
                 ioe.printStackTrace();
             }
