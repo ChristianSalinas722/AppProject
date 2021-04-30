@@ -45,84 +45,84 @@ public class ViewGradesController {
     private TextField classField;
 
     @FXML
-    void addGrade(ActionEvent event) throws IOException {
-        String ass = assignment.getText().toString();
+    void addGrade(ActionEvent event) throws IOException {		//function to add grades to selected class
+        String ass = assignment.getText().toString();			//Initializing strings
         String gra = grade.getText().toString();
         String clas = classField.getText().toString();
         
-        clas = clas + ".txt";
+        clas = clas + ".txt";						//picking class file to read from
 
-        grade.clear();
+        grade.clear();							//When grade is submitted, clear the fields	
         assignment.clear();
 
-        updateGradeList(ass, gra, clas);
+        updateGradeList(ass, gra, clas);				//Call updateGradesList
 
-        double result = calculateAverage(clas);
-        average.setText(Double.toString(result));
+        double result = calculateAverage(clas);				//sends the file to calculate average
+        average.setText(Double.toString(result));			//store result from calcAvg to avg text field
     }
 
     //function to calculate average, was thinking we can just pass in path to text file, load text file in function, parse grades and calculate average, then return average
 
-    public double calculateAverage(String clas) throws NumberFormatException, IOException {
-        double average = 0;
+    public double calculateAverage(String clas) throws NumberFormatException, IOException {		//Calculate the average
+        double average = 0;								//initialize variables
         double total = 0;
 
-        File fileToBeModified = new File(clas);
-        BufferedReader br = null;
-        br = new BufferedReader(new FileReader(fileToBeModified));
+        File fileToBeModified = new File(clas);						//create new file to ope (passed from addGrade)
+        BufferedReader br = null;							//create new buffered reader and filereader to read through file
+        br = new BufferedReader(new FileReader(fileToBeModified));			//Check if file is empty
         if(fileToBeModified.length() <= 1)
         {
             System.out.println("File is empty");
             return 0;
         }
-        FileWriter fw = null;
-        String line = "";
+        FileWriter fw = null;								//Create a new filewriter
+        String line = "";								//Initialize strings to be used to read
         String currentLine = "";
         String assign = "";
         String grad = "";
         int lineNum = -2;
         int result = 0;
 
-        String patern = "(.*)([1-9]{2}$)";
+        String patern = "(.*)([1-9]{2}$)";						//regex Pattern to identify grades entered
         Pattern r = Pattern.compile(patern);
         Matcher m = r.matcher(currentLine);
 
-        if(m.find()){
+        if(m.find()){									//pattern match was found, store in a variable
             grad = m.group(2);
         }
 
-        while (( line = br.readLine()) != null) {											//read to end of file
+        while (( line = br.readLine()) != null) {					//read to end of file
 
-            currentLine = line + "\n";
-            patern = "(.*)([1-9]{2}$)";
+            currentLine = line + "\n";							//store the first line in currentLine
+            patern = "(.*)([1-9]{2}$)";							//regex pattern
             r = Pattern.compile(patern);
             m = r.matcher(currentLine);
 
-            if(m.find()){
+            if(m.find()){								//if pattern was found in the line being read then assign them to variables
                 assign = m.group(1);
                 grad = m.group(2);
             
-            total += Double.parseDouble(grad);
+            total += Double.parseDouble(grad);						//add the grade variable to a total value
             //System.out.println(assign);
            // System.out.println(grad);
             }
 
-            lineNum++;
+            lineNum++;									//keep track of line num to divie total by
             if(total != 0) {
-                result = 1;
+                result = 1;								//if a grade is present, give result a successful value
             }
         }
         
 
-        System.out.println("Line Number total: " + lineNum);
-        if(result == 1) {
+        //System.out.println("Line Number total: " + lineNum);				//Print out lines read
+        if(result == 1) {								//if a value was found, average it 
             average = total / lineNum;
 
 
 
-            return average;
+            return average;								//return
         }
-        return 0;
+        return 0;									//if no values are found return 0. thats the average i guess
     }
 
     //We will need to make this method be called when this FXML loads and then call it again every time addGrade button is pressed. Possible parameter is a text file and then it parses/loops
@@ -132,13 +132,13 @@ public class ViewGradesController {
 
         File f = new File(clas);												//open file
         PrintWriter pw = new PrintWriter(new FileWriter(f,true)); 					//Create PrintWriter to write to file with filewriter attached to users.txt
-        FileReader fr = new FileReader(f);											//create filereader and buffered reader to parse file
+        FileReader fr = new FileReader(f);								//create filereader and buffered reader to parse file
         BufferedReader br = new BufferedReader(new FileReader(f));
-        String formatStr = "%-20s %-12s";
+        String formatStr = "%-20s %-12s";								//Create format to print out to, so everything looks neat
 
         //if(assignment.length() < 5) {
 
-        pw.write(assignment + " " + grade + "\n");
+        pw.write(assignment + " " + grade + "\n");							//write assignment and grade to file then flush
         pw.flush();
 		/*}
 		else if(assignment.length() >= 5 && assignment.length() < 12) {
@@ -155,7 +155,7 @@ public class ViewGradesController {
 			pw.append("\n" + assignment + "\t" + grade);
 			pw.flush();
 		}*/
-        gradeList.getChildren().clear();
+        gradeList.getChildren().clear();								//wrap everything up
         assignList.getChildren().clear();
         pw.close();
         initGradeList(clas);
@@ -167,27 +167,27 @@ public class ViewGradesController {
 
     //read through the file and put all current grades to gradesList with format "assignment \t grade\n"
     public void initGradeList(String clas) throws IOException {
-        File fileToBeModified = new File(clas);
-        BufferedReader br = null;
+        File fileToBeModified = new File(clas);						//Open new file
+        BufferedReader br = null;							//create readers
         br = new BufferedReader(new FileReader(fileToBeModified));
-        FileWriter fw = null;
-        String line = "";
+        FileWriter fw = null;								//create writer
+        String line = "";								//initialize strings to be used
         String currentLine = "";
         String assign = "";
         String grad = "";
 
 
-        String patern = "(.*)([1-9]{2}$)";
-        Pattern r = Pattern.compile(patern);
-        Matcher m = r.matcher(currentLine);
+        String patern = "(.*)([1-9]{2}$)";						//Create patterns to be used.
+        Pattern r = Pattern.compile(patern);						//Reads through the exact same way as calculateAverage() but just does something different in while loop
+        Matcher m = r.matcher(currentLine);						//explained at next comment
 
-        if(m.find()){
+        if(m.find()){									
             assign = m.group(1);
             grad = m.group(2);
         }
 
-        String formatStr = "%-20s %-15s";
-        while (( line = br.readLine()) != null) {											//read to end of file
+        String formatStr = "%-20s %-15s";						
+        while (( line = br.readLine()) != null) {					
 
             currentLine = line + "\n";
             patern = "(.*)([1-9]{2}$)";
@@ -199,12 +199,12 @@ public class ViewGradesController {
                 grad = m.group(2);
             }
 
-            System.out.println(assign);
-            System.out.println(grad);
+            //System.out.println(assign);
+            //System.out.println(grad);
 
             //	System.out.println(currentLine);
-            Text text_1 = new Text(assign + "\n");
-            assignList.getChildren().add(text_1);
+            Text text_1 = new Text(assign + "\n");					//stores assignment & grade found reading through the file and stored in variables from pattern matching
+            assignList.getChildren().add(text_1);					//into the respective TextFlow Boxes. 
             Text text_2 = new Text(grad + "\n");
             gradeList.getChildren().add(text_2);
 
