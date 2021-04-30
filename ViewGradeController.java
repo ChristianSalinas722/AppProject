@@ -1,4 +1,4 @@
-package application;
+package sample;
 
 
 import java.io.BufferedReader;
@@ -40,28 +40,34 @@ public class ViewGradesController {
 
     @FXML
     private TextFlow assignList;
+    
+    @FXML
+    private TextField classField;
 
     @FXML
     void addGrade(ActionEvent event) throws IOException {
         String ass = assignment.getText().toString();
         String gra = grade.getText().toString();
+        String clas = classField.getText().toString();
+        
+        clas = clas + ".txt";
 
         grade.clear();
         assignment.clear();
 
-        updateGradeList(ass, gra);
+        updateGradeList(ass, gra, clas);
 
-        double result = calculateAverage();
+        double result = calculateAverage(clas);
         average.setText(Double.toString(result));
     }
 
     //function to calculate average, was thinking we can just pass in path to text file, load text file in function, parse grades and calculate average, then return average
 
-    public double calculateAverage() throws NumberFormatException, IOException {
+    public double calculateAverage(String clas) throws NumberFormatException, IOException {
         double average = 0;
         double total = 0;
 
-        File fileToBeModified = new File("Physics.txt");
+        File fileToBeModified = new File(clas);
         BufferedReader br = null;
         br = new BufferedReader(new FileReader(fileToBeModified));
         if(fileToBeModified.length() <= 1)
@@ -74,7 +80,7 @@ public class ViewGradesController {
         String currentLine = "";
         String assign = "";
         String grad = "";
-        int lineNum = -1;
+        int lineNum = -2;
         int result = 0;
 
         String patern = "(.*)([1-9]{2}$)";
@@ -121,10 +127,10 @@ public class ViewGradesController {
 
     //We will need to make this method be called when this FXML loads and then call it again every time addGrade button is pressed. Possible parameter is a text file and then it parses/loops
     //through the txt file and then outputs them in particular format to gradesList
-    public void updateGradeList(String assignment, String grade /*, file argument or something */) throws IOException {
+    public void updateGradeList(String assignment, String grade, String clas) throws IOException {
 
 
-        File f = new File("Physics.txt");												//open file
+        File f = new File(clas);												//open file
         PrintWriter pw = new PrintWriter(new FileWriter(f,true)); 					//Create PrintWriter to write to file with filewriter attached to users.txt
         FileReader fr = new FileReader(f);											//create filereader and buffered reader to parse file
         BufferedReader br = new BufferedReader(new FileReader(f));
@@ -152,7 +158,7 @@ public class ViewGradesController {
         gradeList.getChildren().clear();
         assignList.getChildren().clear();
         pw.close();
-        initGradeList();
+        initGradeList(clas);
 
 
 
@@ -160,8 +166,8 @@ public class ViewGradesController {
 
 
     //read through the file and put all current grades to gradesList with format "assignment \t grade\n"
-    public void initGradeList(/*, file argument or something */) throws IOException {
-        File fileToBeModified = new File("Physics.txt");
+    public void initGradeList(String clas) throws IOException {
+        File fileToBeModified = new File(clas);
         BufferedReader br = null;
         br = new BufferedReader(new FileReader(fileToBeModified));
         FileWriter fw = null;
