@@ -40,6 +40,7 @@ public void DeleteClassToList() {
     String create = Input_Field.getText() + ".txt";
     String Class = Input_Field.getText();
 
+    //Creating a file that takes the User Inputs and checks if there is a file that is the same as what was entered
     File f1 = new File(create);
 
     boolean success = f1.delete();
@@ -53,6 +54,7 @@ public void DeleteClassToList() {
     //Removing the Class thats in the Text Field
     Class_List.getItems().remove(Class);
 
+    //This if statments prints if the file exists or not
     if (!success) {
         System.out.println("Deletion Failed.");
     } else {
