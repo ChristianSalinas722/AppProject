@@ -11,7 +11,7 @@
 <?import javafx.scene.text.Text?>
 <?import javafx.scene.text.TextFlow?>
 
-<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.ViewGradesController">
+<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.ViewGradesController">
     <children>
         <Button fx:id="addGrade" layoutX="406.0" layoutY="103.0" mnemonicParsing="false" onAction="#addGrade" text="Add" />
         <TextField fx:id="assignment" layoutX="257.0" layoutY="62.0" />
@@ -19,9 +19,11 @@
         <Label layoutX="299.0" layoutY="45.0" text="Assignment " />
         <Label layoutX="503.0" layoutY="45.0" text="Grade" />
         <Label layoutX="342.0" layoutY="260.0" text="Average:" />
-        <Text fx:id="average" layoutX="402.0" layoutY="256.0" strokeType="OUTSIDE" strokeWidth="0.0" text="GRADE GOES HERE" wrappingWidth="46.0" />
+        <Text fx:id="average" layoutX="402.0" layoutY="273.0" strokeType="OUTSIDE" strokeWidth="0.0" wrappingWidth="46.0" />
         <TextFlow fx:id="assignList" layoutX="8.0" layoutY="19.0" prefHeight="373.0" prefWidth="130.0" />
         <TextFlow fx:id="gradeList" layoutX="138.0" layoutY="16.0" prefHeight="373.0" prefWidth="83.0" />
+      <TextField fx:id="classField" layoutX="351.0" layoutY="19.0" />
+      <Label layoutX="402.0" layoutY="6.0" text="Class" />
     </children>
 </AnchorPane>
 
